@@ -14,7 +14,7 @@ export class AxiosAdapter implements HttpClient {
     params?: Record<string, any>,
     headers?: Record<string, string>
   ): Promise<HttpResponse<T>> {
-    return await axios.delete(url, { params, headers });
+    return await this.axiosInstance.delete(url, { params, headers });
   }
   async get<T = any>(
     url: string,
@@ -41,7 +41,10 @@ export class AxiosAdapter implements HttpClient {
     data?: any,
     headers?: Record<string, string>
   ): Promise<HttpResponse<T>> {
-    const { data: response } = await axios.put(url, { data, headers });
+    const { data: response } = await this.axiosInstance.put(url, {
+      data,
+      headers,
+    });
     return response;
   }
 }

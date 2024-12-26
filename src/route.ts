@@ -16,6 +16,5 @@ const getApiSoap = async (data?: string) => {
 
 router.post("/", async (req, res, next) => {
   const response = await getApiSoap(xmlMultiplyNumbers.xml);
-
   res.send(response);
 });
