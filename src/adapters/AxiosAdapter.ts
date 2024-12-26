@@ -1,6 +1,5 @@
 import axios, { AxiosInstance, RawAxiosRequestHeaders } from "axios";
 import { HttpClient, HttpResponse } from "./interfaces/HttpClientAdapter.ts";
-import { xmlBody } from "../test.ts";
 
 export class AxiosAdapter implements HttpClient {
   protected axiosInstance: AxiosInstance;
